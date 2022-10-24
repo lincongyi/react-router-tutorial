@@ -12,6 +12,7 @@ export default function Contact() {
     <div id="contact">
       <div>
         <img
+          alt=""
           key={contact.avatar}
           src={contact.avatar || null}
         />
@@ -50,13 +51,13 @@ export default function Contact() {
             method="post"
             action="destroy"
             onSubmit={(event) => {
-              // if (
-              //   !confirm(
-              //     "Please confirm you want to delete this record."
-              //   )
-              // ) {
-              //   event.preventDefault();
-              // }
+              if (
+                !window.confirm(
+                  "Please confirm you want to delete this record."
+                )
+              ) {
+                event.preventDefault();
+              }
             }}
           >
             <button type="submit">Delete</button>
